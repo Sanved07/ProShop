@@ -17,12 +17,12 @@ function Header() {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ms-auto">
                 <LinkContainer to="/cart">
-                  <Nav.Link>
+                  <Nav.Link active={false}>
                     <ShoppingCartIcon /> Cart
                   </Nav.Link>
                 </LinkContainer>
                 <LinkContainer to="/login">
-                  <Nav.Link>
+                  <Nav.Link active={false}>
                     <PersonIcon /> Login
                   </Nav.Link>
                 </LinkContainer>
