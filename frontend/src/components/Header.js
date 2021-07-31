@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import PersonIcon from "@material-ui/icons/Person";
-import { LinkContainer } from "react-router-boots";
+import { LinkContainer } from "react-router-bootstrap";
 
 function Header() {
   return (
