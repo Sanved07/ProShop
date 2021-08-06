@@ -1,17 +1,8 @@
 import { React, useEffect, useState } from "react";
 import Ratings from "../components/Ratings";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
-import {
-  Row,
-  Col,
-  ListGroup,
-  Card,
-  Image,
-  Button,
-  Container,
-} from "react-bootstrap";
+import { Row, Col, ListGroup, Image, Button } from "react-bootstrap";
 
 function ProductsScreen({ match }) {
   const [product, setProduct] = useState([]);
@@ -26,9 +17,6 @@ function ProductsScreen({ match }) {
 
   return (
     <div>
-      {/* <Link>
-        <Button >Go Back</Button>
-      </Link> */}
       <Row>
         <Col md={4}>
           <Image src={product.image} alt={product.name} fluid />
@@ -50,15 +38,6 @@ function ProductsScreen({ match }) {
             <ListGroup.Item variant="light">
               <h6>{product.description}</h6>
             </ListGroup.Item>
-            {/* <ListGroup.Item>
-              <Row>
-                <Col md={6}>
-                  <Button variant="warning" size="lg">
-                    Buy Now{" "}
-                  </Button>
-                </Col>
-              </Row>
-            </ListGroup.Item> */}
             <ListGroup.Item>
               <Row>
                 <Col md={6}>
