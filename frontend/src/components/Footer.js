@@ -4,7 +4,7 @@ import { Row, Container, Col } from "react-bootstrap";
 function Footer() {
   return (
     <div>
-      <footer>
+      <footer style={{ marginBottom: "1px" }}>
         <Container>
           <Row>
             <Col className="text-center">Created by Sanved Hambarde</Col>

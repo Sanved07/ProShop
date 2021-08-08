@@ -8,3 +8,7 @@ a {
 span {
   font-size: small;
 }
+
+main {
+  min-height: 600px;
+}
