@@ -7,14 +7,18 @@ import { Row, Col, ListGroup, Image, Button, Form } from "react-bootstrap";
 
 import { useDispatch, useSelector } from "react-redux";
 import { listProductDetails } from "../actions/productActions.js";
+import { addToCart } from "../actions/cartActions.js";
 
 function ProductsScreen({ history, match }) {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+
   const addToCartHandler = () => {
-    history.push("/cart/" + match.params.id + "?qty=" + qty);
+    // history.push("/cart/" + match.params.id + "?qty=" + qty);
+    dispatch(addToCart(product._id, qty));
+    history.push("/cart");
   };
 
   useEffect(() => {
