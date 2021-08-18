@@ -31,17 +31,17 @@ function Header() {
                 </LinkContainer>
                 {userInfo ? (
                   <NavDropdown title={userInfo.name} id="username">
-                    <LinkContainer to="/profile">
+                    {/* <LinkContainer to="/profile">
                       <NavDropdown.Item>Profile</NavDropdown.Item>
-                    </LinkContainer>
+                    </LinkContainer> */}
                     <NavDropdown.Item onClick={logoutHandler}>
                       Logout
                     </NavDropdown.Item>
                   </NavDropdown>
                 ) : (
-                  <LinkContainer to="/login">
+                  <LinkContainer to="/register">
                     <Nav.Link active={false}>
-                      <PersonIcon /> Login
+                      <PersonIcon /> Sign Up
                     </Nav.Link>
                   </LinkContainer>
                 )}
