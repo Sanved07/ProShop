@@ -13,6 +13,7 @@ node_modules
 # production
 /build
 /frontend/build
+Procfile
 
 # misc
 .DS_Store
