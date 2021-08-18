@@ -12,3 +12,7 @@ span {
 main {
   min-height: 600px;
 }
+Link {
+  color: blue;
+  background-color: blue;
+}

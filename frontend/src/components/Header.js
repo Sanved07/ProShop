@@ -6,6 +6,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../actions/userActions.js";
 
+
 function Header() {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
@@ -34,9 +35,11 @@ function Header() {
                     {/* <LinkContainer to="/profile">
                       <NavDropdown.Item>Profile</NavDropdown.Item>
                     </LinkContainer> */}
-                    <NavDropdown.Item onClick={logoutHandler}>
-                      Logout
-                    </NavDropdown.Item>
+                    <LinkContainer to="/">
+                      <NavDropdown.Item onClick={logoutHandler}>
+                        Logout
+                      </NavDropdown.Item>
+                    </LinkContainer>
                   </NavDropdown>
                 ) : (
                   <LinkContainer to="/register">

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message.js";
-import Loader from "../components/Loader";
+
 import { register } from "../actions/userActions.js";
 import { FormContainer } from "../components/FormContainer.js";
 
@@ -17,7 +17,7 @@ function RegisterScreen({ location, history }) {
 
   const dispatch = useDispatch();
   const userRegister = useSelector((state) => state.userRegister);
-  const { loading, error, userInfo } = userRegister;
+  const { userInfo } = userRegister;
 
   useEffect(() => {
     if (userInfo) {
@@ -36,14 +36,8 @@ function RegisterScreen({ location, history }) {
   return (
     <div>
       <FormContainer>
-        <h1>SIGN UP</h1>
-        {error && (
-          <Message variant="danger"> Invalid Email or Password</Message>
-        )}
+        <h1>Sign Up</h1>
         {message && <Message variant="danger">{message}</Message>}
-        {loading && (
-          <Message variant="danger">Invalid Email or Password</Message>
-        )}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId="name" className="mb-3">
             <Form.Label>Enter Your Name</Form.Label>
@@ -89,14 +83,17 @@ function RegisterScreen({ location, history }) {
               }}
             ></Form.Control>
           </Form.Group>
-          <Button type="submit" variant="dark">
+          <Button type="submit" variant="primary">
             Sign Up
           </Button>
         </Form>
         <Row className="py-3">
           <Col>
-            Already have an Account ?
-            <Link to={redirect ? "/login?redirect=" + redirect : "/login"}>
+            Already have an Account ?{" "}
+            <Link
+              style={{ color: "blue" }}
+              to={redirect ? "/login?redirect=" + redirect : "/login"}
+            >
               Log In
             </Link>
           </Col>

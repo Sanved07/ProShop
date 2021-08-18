@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message.js";
-import Loader from "../components/Loader";
+
 import { login } from "../actions/userActions.js";
 import { FormContainer } from "../components/FormContainer.js";
 
@@ -29,7 +29,7 @@ function LoginScreen({ location, history }) {
   return (
     <div>
       <FormContainer>
-        <h1>LOG IN</h1>
+        <h1>Log In</h1>
         {error && (
           <Message variant="danger"> Invalid Email or Password</Message>
         )}
@@ -59,17 +59,18 @@ function LoginScreen({ location, history }) {
               }}
             ></Form.Control>
           </Form.Group>
-          <Button type="submit" variant="dark">
+          <Button type="submit" variant="primary">
             Log In
           </Button>
         </Form>
         <Row className="py-3">
           <Col>
-            New Customer ?
+            New Customer ?{" "}
             <Link
+              style={{ color: "blue" }}
               to={redirect ? "/register?redirect=" + redirect : "/register"}
             >
-              Register
+              Sign Up
             </Link>
           </Col>
         </Row>
