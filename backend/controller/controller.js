@@ -11,7 +11,7 @@ const getProducts = asyncHandler(async (req, res) => {
 });
 
 // GET products by id
-// 
+//
 // GET /api/products/:id
 const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
